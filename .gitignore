@@ -22,3 +22,13 @@ mlflow.db
 
 # Ignore locally generated artifact plots and reports
 artifacts/
+# Python virtual environments
+.venv/
+.env
+
+# Generated Python files
+*.pyc
+
+# Temporary files
+.pytest_cache/
+.mypy_cache/

@@ -1,0 +1,73 @@
+# Lab 11 - Docker and Kubernetes Reference
+
+## Docker Commands
+
+# Check Docker version
+docker --version
+
+# Check Docker Compose version
+docker compose version
+
+# Check Docker status
+docker info
+
+# Build Docker image
+docker build -t churn-prediction-api:lab11 .
+
+# List Docker images
+docker images
+
+# Run Docker container
+docker run -d --name churn-api -p 8000:8000 churn-prediction-api:lab11
+
+# List running containers
+docker ps
+
+# View container logs
+docker logs churn-api
+
+# Stop container
+docker stop churn-api
+
+# Remove container
+docker rm churn-api
+
+## API Testing
+
+# Health endpoint
+http://localhost:8000/health
+
+# API documentation
+http://localhost:8000/docs
+
+# Model metadata
+http://localhost:8000/metadata
+
+## Kubernetes Commands
+
+# Check nodes
+kubectl get nodes
+
+# Deploy application
+kubectl apply -f k8s/
+
+# Check pods
+kubectl get pods
+
+# Check services
+kubectl get services
+
+# Check deployment
+kubectl get deployments
+
+# View application logs
+kubectl logs deployment/churn-api
+
+# Forward service port
+kubectl port-forward service/churn-api-service 8001:8000
+
+# Test Kubernetes API
+http://localhost:8001/health
+
+# Delete Kubernetes resources
+kubectl delete -f k8s/
